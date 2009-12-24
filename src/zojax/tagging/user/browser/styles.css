@@ -1,0 +1,15 @@
+/* zrt-cssregistry: */
+
+@media all {
+
+  .z-tag-cloud span a {
+    text-decoration: none;
+  }
+
+  .z-user-tagging {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: discreetColor;
+  }
+
+}

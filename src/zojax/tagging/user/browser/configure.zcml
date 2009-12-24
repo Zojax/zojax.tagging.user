@@ -1,0 +1,37 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:zojax="http://namespaces.zope.org/zojax"
+   i18n_domain="zojax.tagging.user">
+
+  <!-- preferences -->
+  <zojax:pagelet
+     type="preference.editGroup"
+     for="..interfaces.IPersonalTags"
+     template="preference.pt"
+     class=".preference.PersonalTags"
+     permission="zojax.ModifyPreference" />
+
+  <!-- content personal tags pageelement -->
+  <zojax:pageelement
+     title="Personal tags"
+     name="tagging.user"
+     for="..interfaces.IUserTaggable"
+     template="tags.pt"
+     class=".tags.UserTags"
+     manager="zojax.content.browser.interfaces.IContentFooter"
+     weight="99" />
+
+  <!-- modify personal tags -->
+  <zojax:pagelet
+     name="changePersonalTags.html"
+     for="zojax.tagging.user.interfaces.IUserTaggable"
+     class=".modify.ModifyTagsForm"
+     permission="zope.View" />
+
+  <!-- styles -->
+  <zojax:resourceinclude
+     name="zojax-tagging-user.css"
+     library="zojax"
+     type="stylesheet" file="styles.css" filetype="zrt" />
+
+</configure>
